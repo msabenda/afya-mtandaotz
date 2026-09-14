@@ -21,4 +21,3 @@ class EditorUploadController extends Controller
         ]);
     }
 }
-

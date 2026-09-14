@@ -19,4 +19,3 @@ class EnsurePublisher
         return $next($request);
     }
 }
-

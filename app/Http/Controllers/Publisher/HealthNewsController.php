@@ -108,4 +108,3 @@ class HealthNewsController extends Controller
         return '/storage/'.$path;
     }
 }
-

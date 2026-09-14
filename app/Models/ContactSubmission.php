@@ -12,4 +12,3 @@ class ContactSubmission extends Model
         'message',
     ];
 }
-

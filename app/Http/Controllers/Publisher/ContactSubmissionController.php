@@ -15,4 +15,3 @@ class ContactSubmissionController extends Controller
         ]);
     }
 }
-

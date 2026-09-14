@@ -7,8 +7,8 @@ use App\Jobs\SendNewArticleNewsletterJob;
 use App\Models\Article;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\Support\Str;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 
 class ArticleController extends Controller
@@ -123,4 +123,3 @@ class ArticleController extends Controller
         return '/storage/'.$path;
     }
 }
-

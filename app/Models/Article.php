@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Str;
 
 class Article extends Model
 {
@@ -43,7 +44,7 @@ class Article extends Model
             return $value;
         }
 
-        if (\Illuminate\Support\Str::startsWith($value, 'http://localhost/storage/')) {
+        if (Str::startsWith($value, 'http://localhost/storage/')) {
             return parse_url($value, PHP_URL_PATH) ?: $value;
         }
 
@@ -59,4 +60,3 @@ class Article extends Model
         return str_replace('http://localhost/storage/', '/storage/', $value);
     }
 }
-

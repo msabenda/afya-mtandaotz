@@ -34,7 +34,7 @@ Route::get('/', function () {
             ->orderByDesc('published_at')
             ->limit(5)
             ->get();
-    } catch (\Throwable $e) {
+    } catch (Throwable $e) {
         $latestArticles = collect([
             (object) [
                 'title' => 'Understanding Blood Pressure: What the Numbers Mean',
