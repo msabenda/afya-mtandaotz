@@ -1,0 +1,34 @@
+@extends('auth.layout-publisher-guest')
+
+@section('title', 'Sign in')
+
+@section('heading', 'Sign in')
+
+@section('subheading', 'Enter your email and password to continue')
+
+@section('content')
+    @if (session('publisher_logout_success'))
+        <div class="notice notice--success" role="status">You have been signed out successfully.</div>
+    @endif
+
+    @if ($errors->any())
+        <div class="notice notice--error" role="alert">{{ $errors->first() }}</div>
+    @endif
+
+    <form method="post" action="{{ route('publisher.login.submit') }}">
+        @csrf
+        <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="username" required value="{{ old('email') }}" placeholder="you@example.com">
+        </div>
+        <div class="field">
+            <label for="password">Password</label>
+            <input id="password" name="password" type="password" autocomplete="current-password" required placeholder="••••••••">
+        </div>
+        <label class="remember">
+            <input type="checkbox" name="remember" value="1" @checked(old('remember'))>
+            Stay signed in on this device
+        </label>
+        <button class="submit" type="submit">Continue</button>
+    </form>
+@endsection
