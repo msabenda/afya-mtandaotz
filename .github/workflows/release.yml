@@ -67,7 +67,7 @@ jobs:
 
       - name: Publish GitHub Release artifact
         if: startsWith(github.ref, 'refs/tags/')
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: afya-mtandaoni-${{ github.ref_name }}.tar.gz
           generate_release_notes: true
